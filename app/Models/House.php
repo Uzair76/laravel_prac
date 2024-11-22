@@ -4,18 +4,18 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use App\Models\User;
 
-class User extends Model
+class House extends Model
 {
     use HasFactory;
-
     protected $guarded=[];
 
-    public function houses(){
-        return $this->belongsToMany(House::class,'user_houses');
-    }
 
+    public function user(){
+        return $this->belongsToMany(User::class,'user_houses');
+    }
     public function images()
     {
         return $this->morphMany(Image::class, 'imageable');
