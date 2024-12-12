@@ -4,6 +4,7 @@
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\HouseController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Mail;
@@ -60,4 +61,7 @@ Route::put('houses/{id}', [HouseController::class, 'update'])->name('house.updat
 
 
 
+Route::get('fetch',[QuestionController::class,'fetchQuestions']);
+
+Route::get('s',[QuestionController::class,'showQuestions']);
 
